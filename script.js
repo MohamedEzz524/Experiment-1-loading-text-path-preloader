@@ -1,6 +1,13 @@
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { CustomEase } from "gsap/all";
+import "./styles.css";
+
+// Fix image path for GitHub Pages base path
+const heroImg = document.querySelector(".hero-bg img");
+if (heroImg) {
+  heroImg.src = import.meta.env.BASE_URL + "hero.jpg";
+}
 
 gsap.registerPlugin(SplitText, CustomEase);
 CustomEase.create("hop", "0.9, 0, 0.1, 1");
